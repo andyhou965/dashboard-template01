@@ -1,6 +1,6 @@
 # Dashboard Template by Python and Dash
 
-## Screenshots
+### Screenshots
 
 ![Satellite Dashboard](screenshots/screenshot.png)
 
