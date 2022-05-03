@@ -23,94 +23,6 @@ side_panel_layout = html.Div(
     ],
 )
 
-# Helper to straighten lines on the map
-def flatten_path(xy1, xy2):
-    diff_rate = (xy2 - xy1) / 100
-    res_list = []
-    for i in range(100):
-        res_list.append(xy1 + i * diff_rate)
-    return res_list
-
-
-map_data = [
-    {
-        "type": "scattermapbox",
-        "lat": [0],
-        "lon": [0],
-        "hoverinfo": "text+lon+lat",
-        "text": "Satellite Path",
-        "mode": "lines",
-        "line": {"width": 2, "color": "#707070"},
-    },
-    {
-        "type": "scattermapbox",
-        "lat": [0],
-        "lon": [0],
-        "hoverinfo": "text+lon+lat",
-        "text": "Current Position",
-        "mode": "markers",
-        "marker": {"size": 10, "color": "#fec036"},
-    },
-]
-
-map_layout = {
-    "showlegend": False,
-    "autosize": True,
-    "paper_bgcolor": "#1e1e1e",
-    "plot_bgcolor": "#1e1e1e",
-    "margin": {"t": 0, "r": 0, "b": 0, "l": 0},
-}
-
-map_graph = html.Div(
-    id="world-map-wrapper",
-    children=[
-        map_toggle,
-        dcc.Graph(
-            id="world-map",
-            figure={"data": map_data, "layout": map_layout},
-            config={"displayModeBar": False, "scrollZoom": False},
-        ),
-    ],
-)
-
-# Histogram
-
-histogram = html.Div(
-    id="histogram-container",
-    children=[
-        html.Div(
-            id="histogram-header",
-            children=[
-                html.H1(
-                    id="histogram-title", children=["Select A Property To Display"]
-                ),
-                minute_toggle,
-            ],
-        ),
-        dcc.Graph(
-            id="histogram-graph",
-            figure={
-                "data": [
-                    {
-                        "x": [i for i in range(60)],
-                        "y": [i for i in range(60)],
-                        "type": "scatter",
-                        "marker": {"color": "#fec036"},
-                    }
-                ],
-                "layout": {
-                    "margin": {"t": 30, "r": 35, "b": 40, "l": 50},
-                    "xaxis": {"dtick": 5, "gridcolor": "#636363", "showline": False},
-                    "yaxis": {"showgrid": False},
-                    "plot_bgcolor": "#2b2b2b",
-                    "paper_bgcolor": "#2b2b2b",
-                    "font": {"color": "gray"},
-                },
-            },
-            config={"displayModeBar": False},
-        ),
-    ],
-)
 
 # Control panel + map
 main_panel_layout = html.Div(
@@ -166,9 +78,6 @@ main_panel_layout = html.Div(
     ],
 )
 
-# Data generation
-
-# Pandas
 APP_PATH = str(pathlib.Path(__file__).parent.resolve())
 
 # Root
