@@ -1,3 +1,4 @@
+from turtle import st
 from dash import dcc
 from dash import html
 
@@ -48,7 +49,7 @@ elevation = html.Div(
             value=650,
             units="kilometers",
             showCurrentValue=True,
-            color="#303030",
+            color="#fec036",
         )
     ],
     n_clicks=0,
@@ -65,7 +66,7 @@ temperature = html.Div(
             value=290,
             units="Kelvin",
             showCurrentValue=True,
-            color="#303030",
+            color="#fec036",
         )
     ],
     n_clicks=0,

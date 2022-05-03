@@ -396,7 +396,7 @@ body {
     margin-bottom: 2rem;
 }
 
-#control-panel-elevation, #control-panel-temperature, #control-panel-latitude, #control-panel-longitude,
+#control-panel-elevation, #control-panel-temperature, #control-panel-utc, #control-panel-latitude, #control-panel-longitude,
 #control-panel-speed, #control-panel-fuel, #control-panel-battery {
     cursor: pointer;
     color: #f3f6fa !important;
