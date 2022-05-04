@@ -2,7 +2,7 @@
 
 ### Preview
 
-![Satellite Dashboard](screenshots/screenshot.png)
+![Dashboard Template](screenshots/screenshot.png)
 
 ### Running the app locally
 
